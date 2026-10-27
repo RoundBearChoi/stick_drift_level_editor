@@ -2,6 +2,7 @@ import { Engine } from 'excalibur';
 import { FixedTimestep } from './fixed_timestep';
 import { Tickable } from './tickable';
 import { LevelContext } from './level_context';
+import { ScreenResolutionDebug } from './screen_resolution_debug';
 
 export const NATIVE_RESOLUTION = {
   width: 640,
@@ -17,6 +18,7 @@ export type Resolution = typeof NATIVE_RESOLUTION;
 export class GameContext {
   readonly native_resolution = NATIVE_RESOLUTION;
   readonly level_ctx = new LevelContext();
+  readonly screen_resolution_debug = new ScreenResolutionDebug();
 
   /** editor view center. survives scene recreation. */
   editor_cam_x = NATIVE_RESOLUTION.width / 2;

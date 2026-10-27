@@ -22,3 +22,4 @@ npm start
 - 2 : cycle brick type
 - Shift+R : cycle spike facing
 - Arrow keys : move camera
+- F8 : cycle integer scale (Auto → 1x → 2x → 3x → 4x)

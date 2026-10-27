@@ -61,6 +61,9 @@ export class LevelEditorTestScene extends Scene<GameContext> {
     this._game_ctx = context.data!;
     console.log('onActivate level_editor_test_scene');
 
+    // resolution scale debug label
+    this._game_ctx.screen_resolution_debug.attachToScene(this);
+
 
     // title text
     if (!this._titleLabel) {
