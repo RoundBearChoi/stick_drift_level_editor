@@ -61,12 +61,11 @@ export class LevelEditorTestScene extends Scene<GameContext> {
     this._game_ctx = context.data!;
     console.log('onActivate level_editor_test_scene');
 
-    // shared debug overlays (same pattern as test_scene_1)
 
     // title text
     if (!this._titleLabel) {
       this._titleLabel = new Label({
-        text: 'TEST LEVEL EDITOR',
+        text: 'LEVEL EDITOR',
         pos: vec(8, 8 + 16 + 4),
         font: createDebugFont(),
       });
