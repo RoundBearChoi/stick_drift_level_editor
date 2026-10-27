@@ -1,0 +1,26 @@
+export enum BrickType {
+  Brick8x8 = '8x8',
+  Brick16x16 = '16x16',
+}
+
+export const BRICK_TYPES = Object.values(BrickType) as BrickType[];
+export const DEFAULT_BRICK_TYPE = BrickType.Brick16x16;
+
+export interface BrickDef {
+  width: number;
+  height: number;
+}
+
+export const BRICK_DEFS: Record<BrickType, BrickDef> = {
+  [BrickType.Brick8x8]: { width: 8, height: 8 },
+  [BrickType.Brick16x16]: { width: 16, height: 16 },
+};
+
+export function brickDef(type: BrickType): BrickDef {
+  return BRICK_DEFS[type];
+}
+
+export function nextBrickType(current: BrickType): BrickType {
+  const i = BRICK_TYPES.indexOf(current);
+  return BRICK_TYPES[(i + 1) % BRICK_TYPES.length]; // classic cycling code
+}
